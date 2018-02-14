@@ -1,17 +1,14 @@
 package Excercises;
 
-import org.apache.bcel.generic.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+public class Excercise8_e {
 
-
-public class Excercise8 {
-
-		
+	
 	@Test
 	public void testExcercise6() {
 		 
@@ -22,10 +19,20 @@ public class Excercise8 {
 		
 		driver.findElement(By.linkText("Sortable Data Tables")).click();
 		
-		String listElement = driver.findElement(By.xpath("//*[@id=\"table1\"]/tbody/tr[1]/td[1]")).getText();
 		
+		WebElement table = driver.findElement(By.xpath("//*[@id=\"table1\"]"));
+		
+		String RNO="";
+		for(int i = 0; i+1)
 	
-		System.out.println(listElement);		
+		{
+			WebElement row = table.findElement(By.xpath("//*[@id=\"table1\"]"));
+			if(row.getText().trim().contains(RNO))
+			{
+				RNO=Integer.toString(i+1);
+			}
+		}
+		System.out.println(RNO);		
 		driver.quit();
 	}
 
